@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Yuji+Mai&display=swap');
+:root{
+    --header-height: 5em;
+    --phone-width: 450px;
+    --red-filter: invert(83%) sepia(95%) saturate(5804%) hue-rotate(358deg) brightness(101%) contrast(121%);
+    --dark-green-filter: invert(82%) sepia(30%) saturate(859%) hue-rotate(79deg) brightness(95%) contrast(96%);
+    --black-filter: invert();
+    --dark-blue-filter: invert(92%) sepia(29%) saturate(6310%) hue-rotate(240deg) brightness(86%) contrast(96%);
+    --champagne-filter:  invert(18%) sepia(53%) saturate(392%) hue-rotate(354deg) brightness(93%) contrast(94%);
+    --color-1: #e4e2da;
+}
+
+/* HEADER
+-------------------------------------------------------------------------*/
+
+/*görgetés letiltása hamburger aktiválásánál*/
+body:has(.active) {
+    overflow: hidden;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bitter", serif;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:active{
+    color: black;
+}
+#active{
+    color: rgb(255, 196, 1);
+}
+
+.off-screen-menu{
+    background-color: rgba(0, 0, 0, 0.442);
+    backdrop-filter: blur(17px);
+    height: 100vh;
+    width: 100%;
+    max-width: var(--phone-width);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: calc(-1 * var(--phone-width));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 3em;
+    transition: .3s ease;
+    padding-left: 1em;
+}
+.off-screen-menu.active{
+    right: 0;
+}
+ul{
+    list-style: none;
+}
+
+.hamburger{
+    height: calc(var(--header-height) / 2.5);
+    width: calc(var(--header-height) / 2.5);
+    margin-left: auto;
+    margin-right: 1em;
+    position: relative;
+    z-index: 11;
+    display: block;
+}
+
+.hamburger:hover{
+    cursor: pointer;
+}
+
+
+.hamburger span {
+    position: absolute;
+    height: .2em;
+    width: 100%;
+    background-color: var(--color-1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hamburger span:nth-child(1) {
+    top: 25%;
+    transition: .1s ease;
+}
+.hamburger span:nth-child(3) {
+    top: 75%;
+    transition: .1s ease;
+}
+
+.hamburger.active span:nth-child(1){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: .1s ease;
+}
+.hamburger.active span:nth-child(2){
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition: .1s ease;
+}
+
+header{
+    width: 100%;
+    height: var(--header-height);
+    background-color: #091f1c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1em
+}
+
+#headerNav{
+    display: flex;
+    height: 80%;
+    align-items: center;
+}
+
+#headerNav a{
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    color: white;
+}
+#headerNav a#active{
+    color: white;
+    position: relative;
+}
+#headerNav a#active::after{
+    content: " ";
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+#headerNav li:hover{
+    background-color: rgba(0, 0, 0, 0.288);
+    border-radius: 1em;
+}
+.logo-title{
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+}
+.logo{
+    height: 70%;
+    margin-left: 1em;
+}
+#main-title{
+    color: white;
+    font-weight: 100;
+    display: block;
+    margin-top: 0;
+    justify-self: flex-start;
+    flex-grow: 0;
+}
+
+/* Content // LANDING
+-----------------------------------------------------------------------------------------------*/
+.portfolio{
+    min-height: calc(100vh - var(--header-height));
+    width: 100%;
+    background-color: black;
+    position: relative;
+}
+
+.promo{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    bottom: 0;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(16,16,16,0.9108237044817927) 38%, rgba(36,36,36,0.6895351890756303) 71%, rgba(0,0,0,0) 100%);
+
+}
+
+.szlogen{
+    display: block;
+    font-size: 2em;
+    margin-left: 0.3em;
+    color: white
+}
+
+.configure{
+    flex-basis: 40%;
+    max-width: 300px;
+    align-self: flex-end;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5em;
+    background-color: rgb(255, 196, 1);
+    text-decoration: none;
+    color: black;
+}
+.configure:hover{
+    background-color: orange;
+}
+
+.info{
+    height: 300vh;
+    width: 100%;
+    background-image: url(src/golden-pattern.png);
+    position: relative;
+    overflow:  clip;
+
+}
+
+.leiras{
+    background-color: rgba(55, 55, 55, 0.486);
+    backdrop-filter: blur(7px);
+    padding: 2em;
+    border-radius: 3em;
+    position:absolute;
+    width: 80%;
+    color: white;
+    z-index: 3;
+}
+.leiras h2{
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+.szov1{
+    top: 5%;
+    right: 0;
+    animation: textSlideFromRight both;
+    animation-timeline: view(70% -30%);
+}
+
+.szov2{
+    top: 35%;
+    right: 0;
+    animation: textSlideFromRight both;
+    animation-timeline: view(70% -30%);
+}
+.szov3{
+    top: 60%;
+    left: 0;
+    animation: textSlideFromLeft both;
+    animation-timeline: view(70% -30%);
+}
+@keyframes textSlideFromLeft{
+    /*    left: 0;
+    animation: textSlideFromLeft both;
+    animation-timeline: view(70% -30%);*/
+    from{
+        left: -20em;
+    }
+    to{
+        left: 10%;
+    }
+}
+@keyframes textSlideFromRight{
+    /*    right: 0;
+    animation: textSlideFromRight both;
+    animation-timeline: view(70% -30%);*/
+    from{
+        right: -20em;
+    }
+    to{
+        right: 10%;
+    }
+}
+.rolling-car{
+    width: 800px;
+    height: 200px;
+    position: relative;
+    top: 25%;
+    left: -20px;
+    transform: translate(-50%, -50%);
+    animation: rollIn both;
+    animation-timeline: view(30% -30%);
+    
+}
+
+#base-img{
+    width: 100%;
+}
+
+@keyframes rollIn{
+    from{
+        left: -20px;
+    }
+    to{
+        left: 20%;
+    }
+}
+.wheel{
+    position: absolute;
+    bottom: -45px;
+    right: 90px;
+    width: 110px;
+    height: 110px;
+    transform-origin: center;
+    animation:  rotateAnimation both;
+    animation-timeline: view(30% -30%);
+}
+
+#wheel-img{
+    width: 100%;
+}
+@keyframes rotateAnimation{
+    from{
+        transform: rotate(-180deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+
+#palette{
+    width: 400px;
+    position: absolute;
+    top: 77%;
+    right: -20em;
+    transform: rotateZ(180deg);
+    animation:  paintAnim both;
+    animation-timeline: view(70% -30%);
+}
+
+@keyframes paintAnim{
+    from{
+        transform: rotate(180deg);
+        right: -20em;
+    }
+    to{
+        transform: rotate(360deg);
+        right: 10%;
+    }
+}
+
+section img{
+    min-height: calc(100vh - var(--header-height));
+    max-height: calc(100vh - var(--header-height));
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Content // CONFIGURE
+---------------------------------------------------------------------------*/
+.conf-content{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--color-1);
+}
+
+.preview{
+    width:100%;
+    height: 40vh;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    border-radius: 0 0 3rem 3rem;
+}
+.customization{
+    width:100%;
+    background-color: var(--color-1);
+    padding: 3em;
+}
+
+.draw-box{
+    background-color:var(--color-1);
+    width: 35vh;
+    height: 35vh;
+    border-radius: 2em;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.171);
+}
+
+#sarvedo, #elso-kerek, #hatso-kerek, #szin, #reszletek{
+    width: 35vh;
+    height: 35vh;
+    position: absolute;
+}
+
+#sarvedo{
+    z-index: 1;
+}
+#elso-kerek, #hatso-kerek{
+    z-index: 2;
+}
+#elso-kerek{
+    transform-origin: 50% 57%;
+}
+#hatso-kerek{
+    transform-origin: 14% 45%;
+}
+#szin{
+    z-index: 3;
+    filter: var(--black-filter);
+}
+#reszletek{
+    z-index: 4;
+}
+
+#fekete-kor, #piros-kor, #kek-kor, #pezsgo-kor, #zold-kor{
+    background-color: white;
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+
+}
+#fekete-kor{
+    filter: var(--black-filter);
+}
+#piros-kor{
+    filter: var(--red-filter);
+}
+#kek-kor{
+    filter: var(--dark-blue-filter);
+}
+#pezsgo-kor{
+    filter: var(--champagne-filter);
+}
+#zold-kor{
+    filter: var(--dark-green-filter);
+}
+
+.szin-valaszt{
+    display: flex;
+    gap: 2em;
+}
+
+h1{
+    margin-bottom: 1.5em;
+    font-size: 3.5em;
+}
+h2{
+    margin-top: 2em;
+}
+p{
+    margin-bottom: 1em
+}
+#vegossz{
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+hr{
+    margin: 3em 0 ;
+    border: 2px solid #16423C;
+
+}
+#submit-button{
+    margin-top: 1em;
+    width: 9em;
+    height: 4em;
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: rgb(255, 196, 1);
+    border: none;
+    border-radius: 1em;
+}
+label.error {
+    color: #FB3A3A; 
+    }
+    
+/* Content // TECHNICAL
+---------------------------------------------------------------------------*/
+.content{
+    display: flex;
+    flex-wrap: wrap ;
+}
+
+.tech-info{
+    width: 100%;
+    bottom: 0;
+    padding: 2em;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em
+}
+
+.musz-bemutato{
+    padding: 2em;
+    background-color: var(--color-1);
+    border-radius: 0 0 2em 2em;
+
+    flex-basis: 100%;
+}
+
+#musz-img{
+    display: block;
+    width: 100%;
+    border-radius: 2em;
+    overflow: clip;
+
+}
+.option{
+    flex-basis: 356px;
+    flex-shrink: 0;
+    height: 530px;
+    background-color: var(--color-1);
+    border-radius: 2em;
+    padding: 2em;
+}
+
+.option h2{
+    margin: 0 0 1em 0;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+.content h1{
+    margin-bottom: 0.5em;
+}
+/* RÓLUNK
+-------------------------------------------------------------------------*/
+.rolunk-bg{
+    background-color: rgb(30, 30, 30);
+    background-size: 130%;
+    width: 100%;
+    height: 880px;
+    position: fixed;
+    z-index: -1; 
+}
+.rolunk-title{
+    color: white;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 2em;
+}
+.rolunk-title h1{
+    margin-bottom: 0;
+}
+.rolunk-content{
+    width: 100%;
+    background-image: url(src/wood.png);
+    background-size: 100%;
+    border-radius: 3em 3em 0 0;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    position: relative;
+    overflow: clip;
+}
+
+.rolunk-szov{
+    background-color: rgba(255, 255, 255, 0.308);
+    backdrop-filter: blur(17px);
+    padding: 2em;
+    border-radius: 3em;
+    flex-basis: 500px;
+    z-index: 2;
+}
+.rolunk-szov h2{
+    margin-top: 0;
+    margin-bottom: 1em;
+
+}
+#csav{
+    transform: scale(30%);
+    top: 20%;
+}
+#terv{
+    transform: scale(70%) rotate(37deg);
+}
+#boritek{
+    transform: rotate(-20deg);
+}
+#csav, #terc, #boritek{
+    position: absolute;
+    z-index: 1;
+}
+/* FOOTER
+-------------------------------------------------------------------------*/
+footer{
+    height: var(--header-height);
+    width: 100%;
+    background-color: #091f1c;
+}
+
+/* RESPONSIVITY
+-----------------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 550px){
+    .hamburger{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 549px){
+    #headerNav{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .rolling-car, .wheel{
+        transform: scale(140%);
+    }
+    #palette{
+        width: 600px;;
+    }
+    #wheel-img{
+        width: 100%;
+    }
+    @keyframes rollIn{
+        from{
+            left: -500px;
+        }
+        to{
+            left: -300px;
+        }
+    }
+
+    .leiras p{
+        font-size: 1.2em;
+    }
+    .leiras h2{
+        font-size: 2em;
+    }
+    /* CONFIGURE ---------------------------------------------------------------*/   
+    .conf-content{
+        display: flex;
+        flex-wrap: nowrap;
+
+    }
+    
+    .customization{
+        width: 50%;
+    }
+
+    .preview{
+        height: 100vh;
+        width: 50%;
+        border-radius: 0 3rem 3rem 0;
+    }
+
+
+    .draw-box{
+
+        width: 40vw;
+        height: 40vw;
+    }
+    #sarvedo, #elso-kerek, #hatso-kerek, #szin, #reszletek{
+        width: 40vw;
+        height: 40vw;
+        position: absolute;
+    }
+
+    /* CONFIGURE ---------------------------------------------------------------*/
+
+    .content{
+        display: flex;
+        flex-wrap: nowrap ;
+    }
+    
+    
+    .musz-bemutato{
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        padding: 2em;
+        border-radius: 0 2em 2em 0;
+        
+        flex-basis: 100%;
+    }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gyenes Péter">
+    <meta name="copyright" content="Csak oktatási célokra.">
+    <meta name="description" content="">
+    <title>Landing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="galeria_kod/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="galeria_kod/slick-1.8.1/slick/slick-theme.css">
+    <link rel="icon" type="image/x-icon" href="src/favicon-32x32.png">
+
+    <style>
+        .slider {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+        .slick-slide {margin: 0px 0px;}
+        .slick-slide img {width: 100%;
+        height: 100%;}
+        .slick-prev:before, .slick-next:before {
+        color: black;
+        }
+        .slick-slide {
+        transition: all ease-in-out .3s;
+        opacity: .2;
+        }
+        .slick-active { opacity: .5; }
+        .slick-current { opacity: 1; }
+        .slick-prev.slick-arrow{
+            position: absolute;
+            right: 0;
+            left: 0;
+            margin-left: 5%;
+            z-index: 9;
+            transform: scale(200%);
+        }
+        .slick-next.slick-arrow{
+            position: absolute;
+            right: 0;
+            margin-right: 5%;
+            z-index: 9;
+            transform: scale(200%);
+        }
+        </style>
+</head>
+<body>
+    <div class="off-screen-menu">
+        <ul>
+            <li><a href="#" id="active">Főoldal</a></li>
+            <li><a href="configure.html">Konfigurálás</a></li>
+            <li><a href="technical.html">Műszaki adatok</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+        </ul>
+    </div>
+    <header>
+        <a href="index.html" class="logo-title">
+                <img  class="logo" src="src/logo.png"> 
+                <h2 id="main-title">Classic<br>Cars</h2>   
+        </a>
+            <ul id = "headerNav">
+                <li><a href="#" id="active">Főoldal</a></li>
+                <li><a href="configure.html">Konfigurálás</a></li>
+                <li><a href="technical.html">Műszaki adatok</a></li>
+                <li><a href="rolunk.html">Rólunk</a></li>
+            </ul>   
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    </header>
+    <div class="portfolio">  
+
+        <section class="single-item slider">
+            <div><img src="src/black-car-interior-small.png" alt="kep1" title="kepcim1"></div>
+            <div><img src="src/red-car-garage-small.png" alt="kep2" title="kepcim2"></div>
+            <div><img src="src/grey-car-city-small.png" alt="kep4" title="kepcim4"></div>
+        </section>
+        <div class="promo">
+            <h1 class="szlogen">Megbízható autók,<br>időtlen dizájn.</h1>
+            <a class="configure" href ="configure.html">Konfigurálás</a>
+        </div>
+    </div>
+
+    <div class="info">
+        <div class="leiras szov1">
+            <h2>Elegancia</h2>
+            <p>Nálunk az időtlen elegancia találkozik a modern technológia által biztosított megbízhatósággal. Autóinkat azok számára tervezzük, akik nem csupán egy járművet keresnek, hanem egy életstílust. A klasszikus formatervezés mesterei által inspirált modellek minden részlete a múlt szépségét idézi, miközben a legújabb műszaki megoldások gondoskodnak arról, hogy utazása mindig zavartalan legyen.</p>
+        </div>
+        <div class="leiras szov2">
+            <h2>Megbízhatóság</h2>
+            <p>A gyártási folyamat során a legnagyobb gondossággal ügyelünk arra, hogy autóink hosszú évtizedeken keresztül megbízható társai legyenek tulajdonosaiknak. Minden járművünk szíve egy erős, gazdaságos motor, amely a klasszikus autók stílusához méltó teljesítményt nyújt. Az időtlen megjelenést modern kényelmi és biztonsági megoldásokkal egészítjük ki, hogy Ön és utasai minden úton a legnagyobb kényelemben és biztonságban érezzék magukat.</p>
+        </div>
+        <div class="leiras szov3">
+            <h2>Stílus</h2>
+            <p>Fedezze fel a luxus és a megbízhatóság tökéletes ötvözetét! Autómárkánk elkötelezett amellett, hogy minden ügyfelünk számára egyedi vezetési élményt nyújtson. Az elegancia és az innováció jegyében tervezett modelljeinknél a stílus sosem szab határt a kényelemnek. Testreszabható külső és belső dizájnopcióinkkal garantáljuk, hogy autója pontosan tükrözze személyiségét és igényeit. Válassza a prémium anyagokból készült belső tereket, kifinomult színkombinációkat és technológiai megoldásokat – mert Ön megérdemli, hogy ne csak utazzon, hanem élvezze az utat.</p>
+        </div>
+        <div class="rolling-car">
+            <img src="src/green-roll-in-base-color.png" id="base-img" alt="zöld autó oldalnézetből">
+            <div class="wheel">
+                <img src="src/wheel.png" id="wheel-img" alt="autó kerék">
+            </div>
+        </div>
+        <img src="src/paint-small.png" alt="egy festék paletta" id="palette">
+    </div>
+    <footer></footer>
+    <script src="script.js"></script>
+    <script src="src/jquery-3.7.1.js"></script>
+    <script src="galeria_kod/slick-1.8.1/slick/slick.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('.single-item').slick();
+
+        });
+    </script>
+</body>
+</html>
