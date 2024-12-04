@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gyenes Péter">
+    <meta name="copyright" content="Csak oktatási célokra.">
+    <meta name="description" content="">
+    <title>Configure</title>
+    <link rel="icon" type="image/x-icon" href="src/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="src/jquery-3.7.1.js"></script>
+    <script src="jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $("#rendeles").validate({
+            rules: {               
+                nev: "required",
+                emailcim: {
+                    required: true,
+                    email: true
+                },
+                feltetelek: {
+                    required: true,
+                },
+                egyedi: {
+                    maxlength: 20,
+                },
+                telefonszam: {
+                    required: true,
+                },
+                szuletes: {
+                    required: true,
+                    date: true,
+                    max: '2007-01-01',
+                }
+            },
+            messages: {
+                nev: " Írd be a neved!",
+                emailcim: " Kérlek valós email címet adj meg!",
+                feltetelek: " Kérlek fogadd el a feltételeinket!<br>",
+                egyedi: "<br>A karakterek száma nem haladhatja meg a 30-at.",
+                telefonszam: "Kérlek add meg a telefonszámodat a fenti formátumban",
+                szuletes: "Kérlek add meg a születési dátumodat!"
+            },
+
+
+        });
+        });
+    </script>
+</head>
+<body>
+    <div class="off-screen-menu">
+        <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="#" id="active">Konfigurálás</a></li>
+            <li><a href="technical.html">Műszaki adatok</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+        </ul>
+    </div>
+    <header>
+        <a href="index.html" class="logo-title">
+            <img  class="logo" src="src/logo.png"> 
+            <h2 id="main-title">Classic<br>Cars</h2>   
+        </a>
+            <ul id = "headerNav">
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="#" id="active">Konfigurálás</a></li>
+                <li><a href="technical.html">Műszaki adatok</a></li>
+                <li><a href="rolunk.html">Rólunk</a></li>
+            </ul>   
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    </header>
+    <div class="conf-content">
+        <div class="preview">
+            <div class="draw-box">
+                <img id="sarvedo" src="src/sarvedo.png" alt="az autó kereke mögötti fekete rész" title="">
+                <img id="elso-kerek" src="src/elso.png" alt="Az autó első kereke" title="">
+                <img id="hatso-kerek" src="src/hatso.png" alt="Az autó hátso kereke" title="">
+                <img id="szin" src="src/szin.png" alt="Az autó festése" title="">
+                <img id="reszletek" src="src/reszletek.png" alt="Az autó részletei" title="">
+            </div>
+        </div>
+        <div class="customization">
+            <form method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" id="rendeles" novalidate>
+                <h1>Konfigurálás</h1>
+
+                <h2 id="szincim">Szín</h2>
+                <p>Fejezd ki önmagad autód színével! Válassz 5 elbűvölő opció közül, és mutasd meg mindenkinek ki is vagy valójában! (A piros szín 200 000Ft felárat jelent.)</p>
+                <div class="szin-valaszt">
+                    <label><input type = "radio" name="szin" value="fek" checked="checked"><div id="fekete-kor"></div></label>
+                    <label><input type = "radio" name="szin" value="pir"><div id="piros-kor"></div></label>
+                    <label><input type = "radio" name="szin" value="kek"><div id="kek-kor"></div></label>
+                    <label><input type = "radio" name="szin" value="pezs"><div id="pezsgo-kor"></div></label>
+                    <label><input type = "radio" name="szin" value="zold"><div id="zold-kor"></div></label>
+                </div>
+
+                <h2 id="kerekcim">Kerék méret</h2>
+                <p>Az autó kerekeinek mérete nagyban befolyásolja annak megjelenését, így nagyon fontos megfontolnia, hogy mit választ. (A kerék mérete hatással van a végösszegre.)</p>
+                <h3 id="kerek-meret-szoveg">17"</h3>
+                <label><input type = "range" name="kerek-meret" min="70" max="105" value = "100"></label>
+                
+                <h2 id="felfugg-cim">Felfüggesztés magassága</h2>
+                <p>Sok éves autógyártói tapasztalat útján felfedeztük, hogy vásárlóinknak nagyban eltére az igénye autójának felfüggesztésének magassságával kapcsolatban, így mostmár minden megrendelésben feláras opcióként személyre szabható az autó felfüggesztésének magassága.</p>
+                <h3 id="felfugg-szoveg">-0cm</h3>
+                <label><input type = "range" name="felfugg" min="-20" max="10" value = "0"></label>
+                
+                <label for="csomag"><h2 id="csomag-cim">Csomag (+0Ft)</h2>
+                    <p>Válassza ki az Ön igényeinek leginább megfelelő csomagot</p>    
+                <select name ="csomag[]" id="csomag">
+                    <option value="EcoDrive">EcoDrive csomag</option>
+                    <option value="UrbanPlus">UrbanPlus csomag</option>
+                    <option value="SportLine">SportLine csomag</option>
+                    <option value="AllRoad">AllRoad csomag</option>
+                    <option value="LuxDrive">LuxDrive csomag</option>
+                    <option value="HyperTrack">HyperTrack csomag</option>
+                </select>
+
+                <label><h2 id="egyedi-cim">Egyedi szöveg gravíroztatása</h2>
+                <p>Tedd még egyedibbé az autód belterét egyéni szöveg gravíroztatásával! </p>
+                <input type="text" name="egyedi"></label>
+                <hr>
+
+                <h1>Megrendelő adatai</h1>
+                <label><h2>Név</h2>
+                    <p>Kérjük adja meg a nevét!</p>
+                    <input type="text" name = "nev"></label>
+
+                <label><h2>Email cím</h2>
+                <p>Kérjük adja meg email címét, melyen elérjük magát a rendeléssel kapcsolatos kommunikáció során!</p>
+                <input type="email" name="emailcim"></label>
+
+                <label><h2>Telefonszám</h2>
+                    <p>Adja meg telefonszámát, melyen elérjük sürgetőbb kérdések kapcsán!</p>
+                    <p>Formátum: +01-23-456-7891</p>
+                    <input type="tel" name="telefonszam" id="phone"  placeholder="+01-23-456-7891" pattern="+[0-9]{2}-[0-9]{2}-[0-9]{3}-[0-9]{4}"></label>
+
+                <label><h2>Születési dátum</h2>
+                    <p>Kérjük adja meg születési dátumát!</p>
+                    <input type="date" name="szuletes"></label>
+
+                <label for="orszag"><h2>Ország</h2>
+                    <p>Kérjük adja meg a megrendelés célországát</p>    
+                <select name ="orszag" id="orszag">
+                    <option value="Magyarország">Magyarország</option>
+                    <option value="Németország">Németország</option>
+                    <option value="Olaszország">Olaszország</option>
+                </select>
+
+                </label>
+                <h1 id="vegossz">Végösszeg: 20000000FT</h1>
+                <label><input type="checkbox" name="feltetelek">Elfogadom, hogy a "Küldés" gomb megnyomása fizetési kötelezettésget von maga után.</label><br>
+                <input type="submit" name ="subm" id="submit-button">
+                
+            </form>
+        </div>
+    </div>
+        <footer></footer>
+    <script src="script.js"></script>
+</body>
+</html>
