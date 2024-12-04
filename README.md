@@ -1,3 +1,5 @@
+https://peter851522.github.io/webfejlesztes/technical.html
+
 # webfejlesztes
 A webfejlesztés tárgy beadandója.
 
@@ -16,3 +18,5 @@ https://unsplash.com/photos/black-and-gray-car-steering-wheel-F48ouQRsloY -- ste
 https://pixabay.com/photos/wood-grain-structure-texture-board-2065366/ -- Wood
 
 https://unsplash.com/photos/brown-and-black-steering-wheel-ezx6r3R7CCY -- interior
+
+további képek, szintén az Unsplashről
