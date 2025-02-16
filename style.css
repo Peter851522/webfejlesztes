@@ -605,7 +605,7 @@ label.error {
 }
 #boritek{
     transform: rotate(-20deg);
-    box-shadow: 5px 5px 20px black;
+
 }
 #csav, #terc, #boritek{
     position: absolute;
