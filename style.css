@@ -23,16 +23,17 @@ body:has(.active) {
     padding: 0;
     box-sizing: border-box;
     font-family: "Bitter", serif;
+    text-align: justify;
 }
 
 a{
     text-decoration: none;
     color: white;
 }
-
+/*
 a:active{
     color: black;
-}
+}*/
 #active{
     color: rgb(255, 196, 1);
 }
@@ -133,11 +134,11 @@ header{
     padding: 1em;
     color: white;
 }
-#headerNav a#active{
+#headerNav a#Hactive{
     color: white;
     position: relative;
 }
-#headerNav a#active::after{
+#headerNav a#Hactive::after{
     content: " ";
     position: absolute;
     bottom: 3px;
@@ -413,6 +414,14 @@ section img{
     z-index: 4;
 }
 
+input[type="radio"] {
+    appearance: none;
+}
+
+input[type="radio"]:checked {
+    outline: max(0.2em, 0.15em) solid white;
+    outline-offset: max(2px, 0.15em);
+  }
 #fekete-kor, #piros-kor, #kek-kor, #pezsgo-kor, #zold-kor{
     background-color: white;
     width: 2em;
@@ -438,6 +447,7 @@ section img{
 
 .szin-valaszt{
     display: flex;
+    flex-direction: row;
     gap: 2em;
 }
 
@@ -447,6 +457,15 @@ h1{
 }
 h2{
     margin-top: 2em;
+}
+b{
+    display: block;
+    margin-top: 2em;
+    font-size: 1.5em;
+}
+span{
+    margin-bottom: 1em;
+    display: block;
 }
 p{
     margin-bottom: 1em
@@ -470,6 +489,7 @@ hr{
     background-color: rgb(255, 196, 1);
     border: none;
     border-radius: 1em;
+    text-align: center;
 }
 label.error {
     color: #FB3A3A; 
@@ -575,14 +595,16 @@ label.error {
 
 }
 #csav{
-    transform: scale(30%);
+    transform: scale(0.3);
     top: 20%;
 }
 #terv{
-    transform: scale(70%) rotate(37deg);
+    transform: scale(0.7) rotate(37deg);
+    box-shadow: 5px 5px 20px black;
 }
 #boritek{
     transform: rotate(-20deg);
+    box-shadow: 5px 5px 20px black;
 }
 #csav, #terc, #boritek{
     position: absolute;
@@ -616,7 +638,7 @@ footer{
 
 @media screen and (min-width: 800px){
     .rolling-car, .wheel{
-        transform: scale(140%);
+        transform: scale(1.4);
     }
     #palette{
         width: 600px;;
