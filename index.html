@@ -13,6 +13,9 @@
     <link rel="icon" type="image/x-icon" href="src/favicon-32x32.png">
 
     <style>
+        #validation{
+            display: none;
+        }
         .slider {
         width: 100%;
         height: 100%;
@@ -36,14 +39,14 @@
             left: 0;
             margin-left: 5%;
             z-index: 9;
-            transform: scale(200%);
+            transform: scale(2);
         }
         .slick-next.slick-arrow{
             position: absolute;
             right: 0;
             margin-right: 5%;
             z-index: 9;
-            transform: scale(200%);
+            transform: scale(2);
         }
         </style>
 </head>
@@ -58,11 +61,11 @@
     </div>
     <header>
         <a href="index.html" class="logo-title">
-                <img  class="logo" src="src/logo.png"> 
+                <img  class="logo" src="src/logo.png" alt="Classic Cars logója"> 
                 <h2 id="main-title">Classic<br>Cars</h2>   
         </a>
             <ul id = "headerNav">
-                <li><a href="#" id="active">Főoldal</a></li>
+                <li><a href="#" id="Hactive">Főoldal</a></li>
                 <li><a href="configure.html">Konfigurálás</a></li>
                 <li><a href="technical.html">Műszaki adatok</a></li>
                 <li><a href="rolunk.html">Rólunk</a></li>
@@ -76,7 +79,8 @@
     <div class="portfolio">  
 
         <section class="single-item slider">
-            <div><img src="src/black-car-interior-small.png" alt="Egy klasszikus autó beltere"></div>
+            
+            <div><h6 id="validation">.</h6><img src="src/black-car-interior-small.png" alt="Egy klasszikus autó beltere"></div>
             <div><img src="src/red-car-garage-small.png" alt="Egy piros klasszikus autó egy garázsban" ></div>
             <div><img src="src/grey-car-city-small.png" alt="Egy szürke autó egy városi utcán" ></div>
         </section>
@@ -111,7 +115,8 @@
     <script src="script.js"></script>
     <script src="src/jquery-3.7.1.js"></script>
     <script src="galeria_kod/slick-1.8.1/slick/slick.js"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">-->
+    <script>
         $(document).ready(function() {
 
             $('.single-item').slick();

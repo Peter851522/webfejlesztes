@@ -60,12 +60,12 @@
     </div>
     <header>
         <a href="index.html" class="logo-title">
-            <img  class="logo" src="src/logo.png"> 
+            <img  class="logo" src="src/logo.png" alt="Classic Cars logója"> 
             <h2 id="main-title">Classic<br>Cars</h2>   
         </a>
             <ul id = "headerNav">
                 <li><a href="index.html">Főoldal</a></li>
-                <li><a href="#" id="active">Konfigurálás</a></li>
+                <li><a href="#" id="Hactive">Konfigurálás</a></li>
                 <li><a href="technical.html">Műszaki adatok</a></li>
                 <li><a href="rolunk.html">Rólunk</a></li>
             </ul>   
@@ -92,11 +92,11 @@
                 <h2 id="szincim">Szín</h2>
                 <p>Fejezd ki önmagad autód színével! Válassz 5 elbűvölő opció közül, és mutasd meg mindenkinek ki is vagy valójában! (A piros szín 200 000Ft felárat jelent.)</p>
                 <div class="szin-valaszt">
-                    <label><input type = "radio" name="szin" value="fek" checked="checked"><div id="fekete-kor"></div></label>
-                    <label><input type = "radio" name="szin" value="pir"><div id="piros-kor"></div></label>
-                    <label><input type = "radio" name="szin" value="kek"><div id="kek-kor"></div></label>
-                    <label><input type = "radio" name="szin" value="pezs"><div id="pezsgo-kor"></div></label>
-                    <label><input type = "radio" name="szin" value="zold"><div id="zold-kor"></div></label>
+                    <label><input type = "radio" name="szin" value="fek" checked="checked" id="fekete-kor"></label>
+                    <label><input type = "radio" name="szin" value="pir" id="piros-kor"></label>
+                    <label><input type = "radio" name="szin" value="kek" id="kek-kor"></label>
+                    <label><input type = "radio" name="szin" value="pezs" id="pezsgo-kor"></label>
+                    <label><input type = "radio" name="szin" value="zold" id="zold-kor"></label>
                 </div>
 
                 <h2 id="kerekcim">Kerék méret</h2>
@@ -109,8 +109,8 @@
                 <h3 id="felfugg-szoveg">-0cm</h3>
                 <label><input type = "range" name="felfugg" min="-20" max="10" value = "0"></label>
                 
-                <label for="csomag"><h2 id="csomag-cim">Csomag (+0Ft)</h2>
-                    <p>Válassza ki az Ön igényeinek leginább megfelelő csomagot</p>    
+                <label for="csomag"><b id="csomag-cim">Csomag (+0Ft)</b>
+                    <span>Válassza ki az Ön igényeinek leginább megfelelő csomagot</span>    
                 <select name ="csomag[]" id="csomag">
                     <option value="EcoDrive">EcoDrive csomag</option>
                     <option value="UrbanPlus">UrbanPlus csomag</option>
@@ -118,33 +118,33 @@
                     <option value="AllRoad">AllRoad csomag</option>
                     <option value="LuxDrive">LuxDrive csomag</option>
                     <option value="HyperTrack">HyperTrack csomag</option>
-                </select>
+                </select></label>
 
-                <label><h2 id="egyedi-cim">Egyedi szöveg gravíroztatása</h2>
-                <p>Tedd még egyedibbé az autód belterét egyéni szöveg gravíroztatásával! </p>
+                <label><b id="egyedi-cim">Egyedi szöveg gravíroztatása</b>
+                <span>Tedd még egyedibbé az autód belterét egyéni szöveg gravíroztatásával! </span>
                 <input type="text" name="egyedi"></label>
                 <hr>
 
                 <h1>Megrendelő adatai</h1>
-                <label><h2>Név</h2>
-                    <p>Kérjük adja meg a nevét!</p>
+                <label><b>Név</b>
+                    <span>Kérjük adja meg a nevét!</span>
                     <input type="text" name = "nev"></label>
 
-                <label><h2>Email cím</h2>
-                <p>Kérjük adja meg email címét, melyen elérjük magát a rendeléssel kapcsolatos kommunikáció során!</p>
+                <label><b>Email cím</b>
+                <span>Kérjük adja meg email címét, melyen elérjük magát a rendeléssel kapcsolatos kommunikáció során!</span>
                 <input type="email" name="emailcim"></label>
 
-                <label><h2>Telefonszám</h2>
-                    <p>Adja meg telefonszámát, melyen elérjük sürgetőbb kérdések kapcsán!</p>
-                    <p>Formátum: +01-23-456-7891</p>
+                <label><b>Telefonszám</b>
+                    <span>Adja meg telefonszámát, melyen elérjük sürgetőbb kérdések kapcsán!</span>
+                    <span>Formátum: +01-23-456-7891</span>
                     <input type="tel" name="telefonszam" id="phone"  placeholder="+01-23-456-7891" pattern="+[0-9]{2}-[0-9]{2}-[0-9]{3}-[0-9]{4}"></label>
 
-                <label><h2>Születési dátum</h2>
-                    <p>Kérjük adja meg születési dátumát!</p>
+                <label><b>Születési dátum</b>
+                    <span>Kérjük adja meg születési dátumát!</span>
                     <input type="date" name="szuletes"></label>
 
-                <label for="orszag"><h2>Ország</h2>
-                    <p>Kérjük adja meg a megrendelés célországát</p>    
+                <label for="orszag"><b>Ország</b>
+                    <span>Kérjük adja meg a megrendelés célországát</span>    
                 <select name ="orszag" id="orszag">
                     <option value="Magyarország">Magyarország</option>
                     <option value="Németország">Németország</option>
