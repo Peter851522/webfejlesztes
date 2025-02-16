@@ -421,7 +421,8 @@ input[type="radio"] {
 input[type="radio"]:checked {
     outline: max(0.2em, 0.15em) solid white;
     outline-offset: max(2px, 0.15em);
-  }
+}
+
 #fekete-kor, #piros-kor, #kek-kor, #pezsgo-kor, #zold-kor{
     background-color: white;
     width: 2em;
