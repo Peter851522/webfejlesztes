@@ -12,6 +12,7 @@ https://www.youtube.com/watch?v=pFtxR-O78sY&t=6s -- scroll animation
 https://www.youtube.com/watch?v=aNDqzlAKmZc -- hamburger menu
 https://codepen.io/sosuke/pen/Pjoqqp -- colorcode to filter
 https://colorhunt.co/palette/16423c6a9c89c4dad2e9efec -- color palette
+https://moderncss.dev/pure-css-custom-styled-radio-buttons/ -- custom radio button
 
 https://unsplash.com/photos/a-colorful-piece-of-art-TUOi1Cy0_zA -- paint palette image
 
